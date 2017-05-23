@@ -28,7 +28,17 @@ PERIOD_CHOICES = (
     (MICROSECONDS, _('Microseconds')),
 )
 
-SOLAR_SCHEDULES = [(x, _(x)) for x in schedules.solar._all_events]
+SOLAR_SCHEDULES = [(x, _(x)) for x in [ 
+        'dawn_astronomical',
+        'dawn_nautical',
+        'dawn_civil',
+        'sunrise',
+        'solar_noon',
+        'sunset',
+        'dusk_civil',
+        'dusk_nautical',
+        'dusk_astronomical',
+]]
 
 
 def cronexp(field):
