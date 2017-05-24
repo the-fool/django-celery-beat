@@ -28,6 +28,8 @@ PERIOD_CHOICES = (
     (MICROSECONDS, _('Microseconds')),
 )
 
+# Hack!  We need a stable ordering of choices.  Taking them from the un-ordered dict in the celery module
+# will result in a potentially different list each time this code executes -- which makes Django think we need to create a new migration!
 SOLAR_SCHEDULES = [(x, _(x)) for x in [ 
         'dawn_astronomical',
         'dawn_nautical',
